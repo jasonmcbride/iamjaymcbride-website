@@ -17,6 +17,7 @@ enum Type {
 	email = 'Email',
 	titok = 'TikTok',
 	youtube = 'YouTube',
+	medium = 'Medium',
 }
 
 const socials = [
@@ -25,7 +26,7 @@ const socials = [
 		url: 'https://twitter.com/xxx',
 		icon: 'assets/svg/icons/x.svg',
 		color: 'bg-gray-800',
-		display: false
+		display: false,
 	},
 	{
 		name: Type.gitHub,
@@ -44,6 +45,7 @@ const socials = [
 		url: 'iamjaymcbride@gmail.com',
 		icon: 'assets/svg/icons/email.svg',
 		color: 'bg-lime-400',
+		display: false,
 	},
 	{
 		name: Type.linkedIn,
@@ -63,6 +65,12 @@ const socials = [
 		icon: 'assets/svg/icons/youtube.svg',
 		color: 'bg-white-400',
 	},
+	{
+		name: Type.medium,
+		url: 'https://www.youtube.com/@IamJayMcBride',
+		icon: 'assets/svg/icons/medium.svg',
+		color: 'bg-gray-800',
+	},
 ];
 
 const getColor = (type: Type) => socials.find((social) => social.name === type)?.color;
@@ -74,14 +82,26 @@ const getClass = (type: Type) =>
 
 <div class="grid grid-cols-3 gap-3 md:grid-flow-col md:gap-2 duration-500">
 	{
-		socials.filter((social) => social.display !== false)
-		.map((social) => {
-			const href = social.name === Type.email ? `mailto:${social.url}` : social.url;
-			return (
-				<a aria-label={social.name} class={getClass(social.name)} href={href} target="_blank" rel="nofollow noopner">
-					<img class="size-14 p-3 md:size-16" src={social.icon} alt={social.name} />
-				</a>
-			);
-		})
+		socials
+			.filter((social) => social.display !== false)
+			.map((social) => {
+				const href =
+					social.name === Type.email ? `mailto:${social.url}` : social.url;
+				return (
+					<a
+						aria-label={social.name}
+						class={getClass(social.name)}
+						href={href}
+						target="_blank"
+						rel="nofollow noopner"
+					>
+						<img
+							class="size-14 p-3 md:size-16"
+							src={social.icon}
+							alt={social.name}
+						/>
+					</a>
+				);
+			})
 	}
 </div>

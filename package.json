@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "biome check .",
-    "lint:fix": "biome check --apply .",
+    "lint:fix": "biome check --write .",
     "prepare": "husky"
   },
   "dependencies": {
