@@ -10,7 +10,7 @@
 <section class="mt-12">
 	<h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Get in Touch</h2>
 
-	<form name="contact" method="POST" data-netlify="true" class="space-y-4 max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-lg">
+	<form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="space-y-4 max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-lg">
 	  <div>
 		<label for="name" class="block text-sm font-medium text-gray-700">Your Name:</label>
 		<input type="text" name="name" id="name" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base" required>
@@ -35,7 +35,7 @@
 		<label for="message" class="block text-sm font-medium text-gray-700">Message:</label>
 		<textarea name="message" id="message" rows="4" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base" required></textarea>
 	  </div>
-
+		<div data-netlify-recaptcha="true"></div>
 	  <div>
 		<button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-300">Send</button>
 	  </div>
