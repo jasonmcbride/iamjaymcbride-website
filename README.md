@@ -7,6 +7,9 @@
   <a href="https://github.com/withastro/astro/releases/tag/astro%404.11" alt="Astro">
     <img src="https://img.shields.io/static/v1?label=ASTRO&message=4.11&color=000&logo=astro" />
   </a>
+	<a href="https://app.netlify.com/sites/iamjaymcbride/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/e9e447fe-4c8d-425c-be84-1ad8dda7a756/deploy-status" alt="Netlify Status">
+  </a>
 </p>
 
 ![Screenshot](https://github.com/saminnet/astro-simple-portfolio/assets/5575369/ee64b583-1d9c-47f5-9832-863eaf8968a3)
