@@ -1,12 +1,12 @@
+import netlify from '@astrojs/netlify/static';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://astro-simple-portfolio.vercel.app/', // Required for sitemap -> Replace with your site's URL
-	output: 'hybrid',
+	site: 'https://iamjaymcbride.com/', // Replace with your site's URL
+	output: 'static',
 	integrations: [tailwind(), sitemap()],
-	adapter: vercel(),
+	adapter: netlify(),
 });
