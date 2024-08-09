@@ -16,6 +16,7 @@ enum Type {
 	instagram = 'Instagram',
 	email = 'Email',
 	titok = 'TikTok',
+	youtube = 'YouTube',
 }
 
 const socials = [
@@ -24,36 +25,43 @@ const socials = [
 		url: 'https://twitter.com/xxx',
 		icon: 'assets/svg/icons/x.svg',
 		color: 'bg-gray-800',
+		display: false
 	},
 	{
 		name: Type.gitHub,
-		url: 'https://github.com/xxx',
+		url: 'https://github.com/jasonmcbride',
 		icon: 'assets/svg/icons/github.svg',
 		color: 'bg-cyan-500',
 	},
 	{
 		name: Type.instagram,
-		url: 'https://www.instagram.com/xxx',
+		url: 'https://www.instagram.com/iamjaymcbride',
 		icon: 'assets/svg/icons/instagram.svg',
 		color: 'bg-yellow-400',
 	},
 	{
 		name: Type.email,
-		url: 'xxx@email.com',
+		url: 'iamjaymcbride@gmail.com',
 		icon: 'assets/svg/icons/email.svg',
 		color: 'bg-lime-400',
 	},
 	{
 		name: Type.linkedIn,
-		url: 'https://www.linkedin.com/in/xxx',
+		url: 'https://www.linkedin.com/in/iamjaymcbride',
 		icon: 'assets/svg/icons/linkedin.svg',
 		color: 'bg-sky-700',
 	},
 	{
 		name: Type.titok,
-		url: 'https://www.tiktok.com/xxx',
+		url: 'https://www.tiktok.com/@iamjaymcbride',
 		icon: 'assets/svg/icons/tiktok.svg',
 		color: 'bg-pink-400',
+	},
+	{
+		name: Type.youtube,
+		url: 'https://www.youtube.com/@IamJayMcBride',
+		icon: 'assets/svg/icons/youtube.svg',
+		color: 'bg-white-400',
 	},
 ];
 
@@ -66,7 +74,8 @@ const getClass = (type: Type) =>
 
 <div class="grid grid-cols-3 gap-3 md:grid-flow-col md:gap-2 duration-500">
 	{
-		socials.map((social) => {
+		socials.filter((social) => social.display !== false)
+		.map((social) => {
 			const href = social.name === Type.email ? `mailto:${social.url}` : social.url;
 			return (
 				<a aria-label={social.name} class={getClass(social.name)} href={href} target="_blank" rel="nofollow noopner">
